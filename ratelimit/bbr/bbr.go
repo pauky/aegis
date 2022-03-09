@@ -216,7 +216,7 @@ func (l *BBR) minRT() int64 {
 			for _, p := range bucket.Points {
 				total += p
 			}
-			avg := total / float64(bucket.Count)
+			avg := total / float64(len(bucket.Points))
 			result = math.Min(result, avg)
 		}
 		return result
